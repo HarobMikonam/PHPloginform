@@ -1,6 +1,6 @@
 <?php
 namespace Loader\Core;
-require(__DIR__ . '/Core/functions.php');
+require_once(__DIR__ . '/Core/functions.php');
 
 findFile('Router.php');
 $routes = require(__DIR__ . '/routes.php');

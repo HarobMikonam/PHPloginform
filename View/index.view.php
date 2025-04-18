@@ -1,9 +1,7 @@
 <?php
 namespace Loader\Core;
-
-$parent = dirname(__DIR__);
-
-require($parent . '/Core/ResourceLoader.php');
+require_once(dirname(__DIR__) . '/Core/functions.php');
+findFile('ResourceLoader.php');
 
 $navbar = new ResourceLoader();
 $navbar->loadHeader();

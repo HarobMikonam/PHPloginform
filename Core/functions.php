@@ -1,4 +1,9 @@
 <?php
+/**
+ * var_dump() and die() to get logging information.
+ * @param $value
+ * @return void
+ */
 function dd($value)
 {
     echo "<pre>";
