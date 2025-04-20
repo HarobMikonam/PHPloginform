@@ -1,14 +1,24 @@
 <?php
 
+use Loader\Core\Validator;
+
+require_once(dirname(__DIR__) . '/Core/functions.php');
+findFile('Validator.php', 'Core');
+$errors = [];
 // get username and password from user
-
-$username = $_POST['username'];
+$email = $_POST['email'];
 $password = $_POST['password'];
+$confirmedPassword = $_POST['repassword'];
 
-// make sure the password and the username have lengths of: User(email) and password min 6 and max 12 chars, if longer throw error.
+// make sure the submitted data is valid
+$authorize = new Validator();
+$emailValid = $authorize->email($email);
+$passwordValid = $authorize->password($password);
+$confirmedPasswordValid = $authorize->repassword($confirmedPassword, $password);
 
+errorHandler($errors);
 // prepare a statement to post the data to the database. Send info
 
-// Once data has been sent, redirect to login page with message "You have registered, please login"
+// Once data has been sent, redirect to login page with message "You have registered, please log in"
 
 // Stop POST requests when doing a refresh.

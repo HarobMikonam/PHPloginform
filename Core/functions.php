@@ -24,7 +24,10 @@ function dd($value)
 function findFile($filename, $directory = __DIR__){
     require($directory . '/' . $filename);
 }
-
-function validator($username, $password){
-    //TODO: Validate length of username and password. Pass errors into html
+function errorHandler($errors){
+    if (!empty($errors)) {
+        $_SESSION['errors'] = $errors;
+        header("Location: /register");
+        exit;
+    }
 }
