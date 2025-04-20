@@ -1,7 +1,8 @@
 <?php
 
 return [
-    '/' => '/index.view.php',
-    '/login' => '/login.view.php',
-    '/register' => '/register.view.php',
+    '/' => '/View/index.view.php',
+    '/login' => '/View/login.view.php',
+    '/register' => '/View/register.view.php',
+    '/create' => '/controller/create.php',
 ];

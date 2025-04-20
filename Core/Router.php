@@ -15,13 +15,15 @@ class Router
      * If a matching route is found, the corresponding view file is included.
      * Otherwise, the 404 view is served.
      */
-    public function route($uri, $route)
+    public function routeView($uri, $route)
+        //TODO: improve router, make it so i can select specific directories within the entire project folder. add variables $URI, $ROUTE, $DIR.
     {
         if (array_key_exists($uri, $route)) {
-            require(dirname(__DIR__) . '/View' . $route[$uri]);
+            require(dirname(__DIR__) . $route[$uri]);
             return;
         }
         require(dirname(__DIR__) . '/View/404.view.php');
         exit();
     }
 }
+
